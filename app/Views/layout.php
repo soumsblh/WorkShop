@@ -55,10 +55,10 @@
                     <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('default_contact'); ?>">Nous Contacter</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_register'); ?>">S'inscrire</a>
+                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_register'); ?>">Inscription Pro</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_login'); ?>">connexion</span></a>
+                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_login'); ?>">Connexion Pro</span></a>
                 </li>
             </ul>
         </div>
@@ -75,9 +75,10 @@
 <?= $this->section('javascript') ?> <!--AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY--> <!--AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY  //  clef: mohammed si l'autre fonctionne pas:  AIzaSyCBLynodCrw0lB99t1SANF8PbXwANKcBK4 -->
 <script src="<?= $this->assetUrl('vendor/jquery/jquery.min.js') ?>" charset="utf-8"></script>
 <script src="<?= $this->assetUrl('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>" charset="utf-8"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY&callback=initMap" type="text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY" type="text/javascript"></script>
+<script src="<?= $this->assetUrl('bootstrap/js/googleMap.js') ?>" charset="utf-8"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4ox_EnhWi5VVVA62vdp5TqLTxMIx9Yts&callback=initMap" type="text/javascript"></script>
 <?= $this->section('script') ?>
-
-</>
+</body>
 </html>
