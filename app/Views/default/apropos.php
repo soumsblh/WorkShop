@@ -8,11 +8,39 @@
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                  <span class="section-heading-lower">About Our Cafe</span>
+                  <span class="section-heading-upper">Devenez acteur de l'éco-responsabilité</span>
+                  <span class="section-heading-lower">Green'Tech</span>
                 </h2>
-                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
-                <p class="mb-0">We guarantee that you will fall in <em>lust</em> with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.</p>
+                <p style="text-align:center">
+                   <b >   Green'Tech provient d'une problématique d'éco-responsabilité.</b>
+                    <br />
+                    <br />
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="<?= $this->assetUrl('img/tree.jpg') ?>" alt="">
+                    <br />
+                    <br />
+                    "Comment faire pour mettre en relation les particuliers et les professionnels liés au monde de l'écologie?"
+                    <br />
+                    <br />
+                        Aujourd'hui, 98% de la population a envie d'être plus responsable pour sauver et garder notre planète la plus propre possible. Le problème qui se pose est: "Comment faire pour devenir éco-responsable?"
+                    <br />
+                    <br />
+                    Nous pouvons chercher sur internet des tonnes et des tonnes d'informations, ce n'est pas pour cela que nous allons réaliser concrètement notre démarche. Qui peut nous aider? A qui acheter nos fruits et légumes bio et locales? A qui donner nos déchets pour améliorer le recyclage?
+                    <br />
+                    <br />
+                    Pourquoi passer des heures à chercher sur Internet quand un seul site web nous permet de trouver et localiser ce que nous recherchons?
+                    <br />
+                    <br />
+                    <b>L'idée de "Green'Tech" était née. Un seul site permettant de mettre en relation tous les acteurs de notre éco-responsabilité.</b>
+                    <br />
+                    <br />
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="<?= $this->assetUrl('img/mountains.jpg') ?>" alt="">
+                    <br />
+                    <br />
+                    Vous, utilisateur, découvriront que nous sommes TOUS les acteurs de l'écologie et que Green'Tech en est le lien.
+                    <br />
+                    <br />
+                    Découvrez enfin les acteurs proches de chez vous qui vous aideront à améliorer notre planète, mais également votre vie et vos dépenses.
+                </p>
               </div>
             </div>
           </div>
