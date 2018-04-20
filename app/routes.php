@@ -11,8 +11,7 @@
         ['GET|POST', '/contact', 'Default#contact', 'default_contact'], //affiche la page contact
 
 		//Dans le fichier je Crée le controller SecurityController
-		['GET|POST', '/login'   , 'Security#login'   , 'security_login'],    //connexion
-		['GET|POST', '/register', 'Security#register', 'security_register'], //inscription
+		['GET|POST', '/registreorlogin'   , 'Security#registreorlogin'   , 'security_registreorlogin'],    //connexion ou inscription
 		['GET|POST', '/logout'  , 'Security#logout'  , 'security_logout'],   //deconnexion
 		['GET|POST', '/forget'  , 'Security#forget'  , 'security_forget'],   //mot de passe oublié
 

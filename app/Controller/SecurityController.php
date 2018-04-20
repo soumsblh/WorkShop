@@ -89,10 +89,10 @@ class SecurityController extends Controller
     /**
      * Permet la connexion d'un utilisateur
     */
-    public function login()
+    public function registreorlogin()
     {
 
-        if (isset($_POST['button-login'])) {
+        /*if (isset($_POST['button-login'])) {
             var_dump($_POST);
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -105,11 +105,11 @@ class SecurityController extends Controller
                 $auth_manager->logUserIn($user); // La connexion se fait
                 $this->redirectToRoute('default_frontPage');
             }
-        }
+        }*/
 
     
     // J'injecte la variable messages dans ma vue
-    $this->show('default/frontPage', ['messages' => $messages]);
+    $this->show('security/registreorlogin');
   }
 
     /**

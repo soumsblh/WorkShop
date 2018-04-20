@@ -9,11 +9,9 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('bootstrap/css/bootstrap.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('bootstrap/css/bootstrap.css.map') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/form.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/business-casual.css') ?>">
     <link rel="stylesheet" href="<?= $this->assetUrl('fonts/font-awesome.css') ?>">
-	<link rel="stylesheet" href="<?= $this->assetUrl('css/loader.css') ?>">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<?= $this->assetUrl('vendor/bootstrap/css/bootstrap.min.css')?>">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -55,10 +53,7 @@
                     <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('default_contact'); ?>">Nous Contacter</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_register'); ?>">Inscription Pro</a>
-                </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_login'); ?>">Connexion Pro</span></a>
+                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_registreorlogin'); ?>">Inscription ou Connexion Pro</a>
                 </li>
             </ul>
         </div>
@@ -76,6 +71,7 @@
 <script src="<?= $this->assetUrl('vendor/jquery/jquery.min.js') ?>" charset="utf-8"></script>
 <script src="<?= $this->assetUrl('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>" charset="utf-8"></script>
 <script src="<?= $this->assetUrl('bootstrap/js/googleMap.js') ?>" charset="utf-8"></script>
+<script src="<?= $this->assetUrl('bootstrap/js/form.js') ?>" charset="utf-8"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4ox_EnhWi5VVVA62vdp5TqLTxMIx9Yts&callback=initMap" type="text/javascript"></script>
