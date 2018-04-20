@@ -20,7 +20,7 @@ class DefaultController extends Controller
 	/**
 	* Page de profil admin
 	*/
-	public function profileAdmin()
+	public function profilePro()
 	{
 
 		//redirection a une page d'erreur si on on n'est pas admin
@@ -32,7 +32,7 @@ class DefaultController extends Controller
 		$events       	= $event_manager->findAll();
 		$count_events 	= $event_manager->countEvents($this->getUser()['id']);
 		$count_users 		= $user_manager->countUsers();
-		$this->show('default/profileAdmin' , ['events' => $events, 'user' => $user, 'count_events' => $count_events, 'count_users' => $count_users]);
+		$this->show('default/profilePro' , ['events' => $events, 'user' => $user, 'count_events' => $count_events, 'count_users' => $count_users]);
 
 	}
 

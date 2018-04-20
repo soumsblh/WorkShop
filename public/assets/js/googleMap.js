@@ -27,6 +27,7 @@ var locations = [];
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function(){
+    alert('hello');
     var data = JSON.parse(xhr.responseText);
     for(var i =0; i < data.length; i++){
         locations[i] = {lat: Number(data[i]["Latitude"]), lng: Number(data[i]["Longitude"])};
