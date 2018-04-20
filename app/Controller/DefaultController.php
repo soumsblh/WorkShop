@@ -214,5 +214,9 @@ class DefaultController extends Controller
 
 
 	}
+	public function apropos()
+    {
+        $this->show('default/apropos', []);
+    }
 
 }

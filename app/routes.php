@@ -2,7 +2,7 @@
 
 	$w_routes = array(
 
-
+        ['GET', '/home', 'default#home', 'default_home'],
 
 		['GET|POST', '/frontpage', 'default#login', 'default_frontPage'],//page d'acceuil après avoir cliqué sur la carte
 
@@ -17,14 +17,7 @@
 		['GET|POST', '/forget'  , 'Security#forget'  , 'security_forget'],   //mot de passe oublié
 
 
-		//Dans le fichier je Crée le controller EventController
-		['GET|POST', '/event/[i:page]?/'   , 'Event#index' , 'event_index'],  //afficher un evenement*
-		['GET|POST', '/event/create'       , 'Event#create', 'event_create'], //add un evenement*
-		['GET|POST', '/event/update/[i:id]', 'Event#update', 'event_update'], //modifie un evenement
-		['GET|POST', '/event/delete/[i:id]', 'Event#delete', 'event_delete'], //supprime un evenement
-		['GET|POST', '/event/trajet'       , 'Event#trajet', 'event_trajet'], //ajoute un trajet
-		['GET|POST', '/event/[i:id]'       , 'Event#view' , 'event_view'  ], //affiche un seule event precis (avec l'id)
-		['GET|POST', '/event/search'       , 'Event#searching' , 'event_search'  ],
+		//Dans le fichier je Crée le controller CategoriesController
 
 		//Dans le fichier je Crée le controller ProfilController
 		['GET|POST', '/profile/?[i:id]?'        , 'Default#profile'      , 'default_profile'], //affiche la page profil
