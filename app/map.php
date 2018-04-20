@@ -1,16 +1,20 @@
 <?php
-
 $user = "root";
 $pass = "";
-$connect = new  PDO('mysql:host=localhost;dbname=greentech', $user, $pass);
 
-$query="SELECT * from company";
+$connect = new  PDO('mysql:host=localhost;dbname=greentech;charset=UTF8', $user, $pass);
 
-$locations = [];
-$count = 0;
+$tab = [];
+$count=0;
+//$answer = $connect->prepare("SELECT * FROM `company` where IdCompany=1");
+foreach($connect->query('SELECT * FROM company') as $row) {
+    $tab[$count] = $row;
+    $count++;
+}
 
-$reponse = $connect->query($query);
+echo json_encode($tab);
 
-echo json_encode($reponse->fetchAll());
+$answer = null;
+$connect = null;
 
 ?>

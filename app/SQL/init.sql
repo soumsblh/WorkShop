@@ -64,4 +64,7 @@ INSERT INTO `company` (`IdCompany`, `SIREN`, `RaisonSocial`, `Tel`, `Mail`, `web
 (1, '5834846541', 'La Plume du Phoenix', '0613449556', 'mickael.carpene@gmail.com', 'www.laplumeduphoenix.com', 'Création de Sites Web', '50.373893', '3.554130', '68 rue Paul Vaillant Couturier, 59880 Saint-Saulve');
 
 INSERT INTO `company` (`IdCompany`, `SIREN`, `RaisonSocial`, `Tel`, `Mail`, `web`, `Description`, `Latitude`, `Longitude`, `Address`) VALUES
-(2, '123456789', 'Aux halles fruitiers', '0614586541', 'mickael.carpene@gmail.com', 'www.hallesfruitiers.com', 'Primeur proposant des fruits et légumes de saisons locals!!', '50.3729715', '50.3729715', '54 Rue Paul Vaillant Couturier, 59880 Saint-Saulve');
+(2, '123456789', 'Aux halles fruitiers', '0614586541', 'mickael.carpene@gmail.com', 'www.hallesfruitiers.com', 'Primeur proposant des fruits et légumes de saisons locaux!!', '50.3729715', '3.555430', '54 Rue Paul Vaillant Couturier, 59880 Saint-Saulve');
+
+INSERT  INTO `company` (`IdCompany`, `SIREN`, `RaisonSocial`, `Tel`, `Mail`, `web`, `Description`, `Latitude`, `Longitude`, `Address`) VALUES
+(3, '865 164 889','Arras Fruits', '0345894510', 'mickael.carpene@gmail.com', 'www.kiouiarras.com', 'Primeur proposant des fruits et légumes de saisons locaux!!', '50.2846207', '2.7736121', '18 Rue d Achicourt, 62000 Arras');

@@ -19,19 +19,25 @@ function initMap() {
         });
     });
 
+
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(map, markers,
         {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
 }
 var locations = [];
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function(){
-    var data = JSON.parse(xhr.responseText);
-    for(var i =0; i < data.length; i++){
-        locations[i] = {lat: Number(data[i]["Latitude"]), lng: Number(data[i]["Longitude"])};
-        document.getElementById("Company").innerHTML = i+1 + " - " + data[i]["RaisonSocial"] + " - SIREN: " + data[i]["SIREN"] + "<br />";
+    if(this.readyState == 4 && this.status == 200)
+    {
+        var data = JSON.parse(xhr.responseText);
+        for (var i = 0; i < data.length; i++) {
+            locations[i] = {lat: Number(data[i]["Latitude"]), lng: Number(data[i]["Longitude"])};
+            document.getElementById("Company").innerHTML = document.getElementById("Company").innerHTML + "<br />---------------<br />" + Number(i + 1) + " - " + data[i]["RaisonSocial"] + " - SIREN: " + data[i]["SIREN"] + "<br />" + data[i]["Address"];
+        }
     }
 };
+
 xhr.open('GET', "../app/map.php");
 xhr.send(null);
