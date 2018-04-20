@@ -12,5 +12,4 @@ $count = 0;
 $reponse = $connect->query($query);
 
 echo json_encode($reponse->fetchAll());
-
 ?>
