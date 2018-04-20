@@ -33,16 +33,13 @@
                         <span class="section-heading-upper">Les pros </span>
                         <span class="section-heading-lower">Prés de chez-vous </span>
                     </h2>
-                    <div class="col-md-12 col-md-offset-2">
-                        <div action="/" class="form-group js-form">
-                            <label class="text-center" for="address" class="label">Ajouter une adresse</label>
-                            <input type="text-center" value="" class="form-control js-input" />
-                        </div>
-                    </div>
-                        <div id="map" style="width:800px;height:300px"></div>
+                    <div id="map" style="width:100%;height:300px"></div>
+                    <div id="Company"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&amp;sensor=false"></script>
 <?php $this->stop('main_content'); ?>
