@@ -33,6 +33,5 @@ xhr.onreadystatechange = function(){
         document.getElementById("Company").innerHTML = i+1 + " - " + data[i]["RaisonSocial"] + " - SIREN: " + data[i]["SIREN"] + "<br />";
     }
 };
-
 xhr.open('GET', "../app/map.php");
 xhr.send(null);
