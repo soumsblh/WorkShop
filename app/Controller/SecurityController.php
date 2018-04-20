@@ -13,16 +13,15 @@ class SecurityController extends Controller
     {
         //traitement de notre formulaire ici conexion
         $firstname = null;
-        $lastname  = null;
+        $siren  = null;
         $username  = null;
         $email     = null;
         $password  = null;
         $message   = null;
 
         if (isset($_POST['button-register']) ) {
-            $firstname  = trim($_POST['firstname']);
-            $lastname   = trim($_POST['lastname']);
             $username   = trim($_POST['username']);
+            $siren   = trim($_POST['siren']);
             $email      = trim($_POST['email']);
             $password   = trim($_POST['password']);
             $cfpassword = trim($_POST['cfpassword']);
@@ -31,11 +30,11 @@ class SecurityController extends Controller
 
 
             $errors = [];
-                if (strlen($firstname) < 2 ) {
-                    $errors['firstname'] = "Le prenom doit comporter au moins 2 caractères.";
+                if (strlen($username) < 2 ) {
+                    $errors['username'] = "Le prenom doit comporter au moins 2 caractères.";
                 }
-                if (strlen($lastname) < 2 ) {
-                    $errors['lastname'] = "Le nom doit comporter au moins 2 caratères.";
+                if (strlen($siren) < 2 ) {
+                    $errors['siren'] = "Le nom doit comporter au moins 2 caratères.";
                 }
                 if ( $user_manager->emailExists($email) || $user_manager->usernameExists($username) ) {
                     $errors['exists'] = "L'email ou le nom d'utilisateur existe deja";
@@ -58,9 +57,8 @@ class SecurityController extends Controller
                   //si il n'y a pas d'erreur on inscrit lutilisateur en bdd
                   $user_manager->insert([
 
-                      'firstname'=> $firstname,
-                      'lastname' => $lastname,
                       'username' => $username,
+                      'siren' => $siren,
                       'email'    => $email ,
                       'role'     => 'user',
                       'password' => $auth_manager->hashPassword($password) //$auth_manager->hashPassword() pbm avec hashage de mt d passe
@@ -73,7 +71,7 @@ class SecurityController extends Controller
                       $user_manager = new UserModel();
                       $user = $user_manager->find($user_id); // Récupére toutes les infos de l'utilisateur qui se connecte
                       $auth_manager->logUserIn($user); // La connexion se fait
-                      $this->redirectToRoute('default_frontPage');
+                      $this->redirectToRoute('default_profilPro');
                   }
 
             }
@@ -83,16 +81,16 @@ class SecurityController extends Controller
             }
 
           }
-        $this->show('security/register' , ['message' => $message ,'firstname'=>$firstname,'lastname' => $lastname,'username' => $username , 'email' => $email ]);
+        $this->show('security/registre' , ['siren' => $siren, 'username' => $username , 'email' => $email ]);
     }
 
     /**
      * Permet la connexion d'un utilisateur
     */
-    public function registreorlogin()
+    public function login()
     {
 
-        /*if (isset($_POST['button-login'])) {
+        if (isset($_POST['button-login'])) {
             var_dump($_POST);
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -103,13 +101,11 @@ class SecurityController extends Controller
                 $user_manager = new UserModel();
                 $user = $user_manager->find($user_id); // Récupére toutes les infos de l'utilisateur qui se connecte
                 $auth_manager->logUserIn($user); // La connexion se fait
-                $this->redirectToRoute('default_frontPage');
+                $this->redirectToRoute('default_profilPro');
             }
-        }*/
+        }
 
-    
-    // J'injecte la variable messages dans ma vue
-    $this->show('security/registreorlogin');
+    $this->show('security/login');
   }
 
     /**

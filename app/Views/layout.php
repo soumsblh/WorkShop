@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('bootstrap/css/bootstrap.css.map') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/form.css') ?>">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/business-casual.css') ?>">
-    <link rel="stylesheet" href="<?= $this->assetUrl('fonts/font-awesome.css') ?>">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -38,22 +37,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item active px-lg-4">
+                <li class="nav-item <?php if($w_current_route == 'default_home'):?>active<?php endif; ?> px-lg-4">
                     <a class="nav-link text-uppercase text-expanded"  href="<?php echo $this->url('default_home'); ?>">Accueil
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item px-lg-4">
+                <li class="nav-item <?php if($w_current_route == 'default_apropos'):?>active<?php endif; ?> px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('default_apropos'); ?>">à propos</a>
                 </li>
-                <li class="nav-item px-lg-4">
+                <li class="nav-item <?php if($w_current_route == 'default_apropos'):?>active<?php endif; ?> px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('default_apropos'); ?>">Nos Produits</a>
                 </li>
-                <li class="nav-item px-lg-4">
+                <li class="nav-item <?php if($w_current_route == 'default_contact'):?>active<?php endif; ?> px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('default_contact'); ?>">Nous Contacter</a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_registreorlogin'); ?>">Inscription ou Connexion Pro</a>
+                <li class="nav-item <?php if($w_current_route == 'security_registre'):?>active<?php endif; ?> px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_registre'); ?>">Inscription Pro</a>
+                </li>
+                <li class="nav-item <?php if($w_current_route == 'security_login'):?>active<?php endif; ?> px-lg-4">
+                    <a class="nav-link text-uppercase text-expanded" href="<?php echo $this->url('security_login'); ?>">Connexion Pro</a>
                 </li>
             </ul>
         </div>
@@ -67,14 +68,16 @@
         <p class="m-0 small">Copyright &copy; Green'Tech 2018</p>
     </div>
 </footer>
-<?= $this->section('javascript') ?> <!--AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY--> <!--AIzaSyDw-gYmqJqQ-8RYU_8LZoTNFyQ51_yWYCY  //  clef: mohammed si l'autre fonctionne pas:  AIzaSyCBLynodCrw0lB99t1SANF8PbXwANKcBK4 -->
-<script src="<?= $this->assetUrl('vendor/jquery/jquery.min.js') ?>" charset="utf-8"></script>
-<script src="<?= $this->assetUrl('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>" charset="utf-8"></script>
-<script src="<?= $this->assetUrl('bootstrap/js/googleMap.js') ?>" charset="utf-8"></script>
-<script src="<?= $this->assetUrl('bootstrap/js/form.js') ?>" charset="utf-8"></script>
+<?= $this->section('javascript') ?>
+<script src="<?= $this->assetUrl('jquery/jquery.slim.js') ?>" charset="utf-8"></script>
+<script src="<?= $this->assetUrl('bootstrap/js/bootstrap.bundle.js') ?>" charset="utf-8"></script>
+<script src="<?= $this->assetUrl('bootstrap/js/bootstrap.js') ?>" charset="utf-8"></script>
+<?php if ($w_current_route == 'default_home'): ?>
+    <script src="<?= $this->assetUrl('bootstrap/js/googleMap.js') ?>" charset="utf-8"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4ox_EnhWi5VVVA62vdp5TqLTxMIx9Yts&callback=initMap" type="text/javascript"></script>
+<?php endif; ?><!-- $w_current_route != 'default_home' -->
 <?= $this->section('script') ?>
 </body>
 </html>
