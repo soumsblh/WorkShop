@@ -17,7 +17,7 @@
                     Ne restez pas spectateur, mais devenez acteur de la consommation responsable
                 </p>
                 <div class="intro-button mx-auto">
-                    <a class="btn btn-primary btn-xl" href="<?php echo $this->url('default_apropos'); ?>">En savoir plus!</a>
+                    <a class="btn btn-primary btn-xl" href=""<?php echo $this->url('default_apropos'); ?>">En savoir plus!</a>
                 </div>
             </div>
         </div>
@@ -36,10 +36,11 @@
                     <div class="col-md-12 col-md-offset-2">
                         <div action="/" class="form-group js-form">
                             <label class="text-center" for="address" class="label">Ajouter une adresse</label>
-                            <input type="text-center" value="" class="form-control js-input" />
+                            <input id="pac-input" type="text" value="" class="form-control js-input" />
                         </div>
                     </div>
                         <div id="map" style="width:100%;height:300px"></div>
+                    <div id ="Company"> </div>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ $connect = new  PDO('mysql:host=localhost;dbname=greentech;charset=UTF8', $user,
 $tab = [];
 $count=0;
 //$answer = $connect->prepare("SELECT * FROM `company` where IdCompany=1");
-foreach($connect->query('SELECT * FROM company') as $row) {
+foreach($connect->query('SELECT * FROM users') as $row) {
     $tab[$count] = $row;
     $count++;
 }
