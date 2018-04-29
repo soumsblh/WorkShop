@@ -3,10 +3,9 @@
 namespace Model;
 
 use \W\Model\Model;
-use Model\companyModel;
-use W\Model\UsersModel;
+use \W\Model\UsersModel;
 
-class CompanyModel extends UsersModel
+class UserModel extends UsersModel
 {
     //on herite de tout ce qu il ya dans W
 
@@ -19,7 +18,7 @@ class CompanyModel extends UsersModel
 
     function changeUserPassword($id, $password) {
         global $db;
-        $query = $this->dbh->prepare('UPDATE company SET password = :password, token_forget = NULL, date_forget = NULL WHERE id = :id'); // On met à jour le mot de passe de l'utilisateur et on supprime le token
+        $query = $this->dbh->prepare('UPDATE users SET password = :password, token_forget = NULL, date_forget = NULL WHERE id = :id'); // On met à jour le mot de passe de l'utilisateur et on supprime le token
         $query->bindValue(':id', $id);
         $query->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
         return $query->execute();
@@ -28,7 +27,7 @@ class CompanyModel extends UsersModel
     function changeTokenLogin($user_id) {
         global $db;
         $token_login = sha1(md5(sha1($user_id) . sha1(time()) . md5('1a4g51rz74hz21rz4h') . md5(uniqid()))); // Génére un token du style 3a4f74a7f5a7f4v7g4ae5g41ae2gea87gv
-        $db->query('UPDATE company SET token_login = "'.$token_login.'" WHERE id = ' . $user_id);
+        $db->query('UPDATE users SET token_login = "'.$token_login.'" WHERE id = ' . $user_id);
         return $token_login;
     }
 
@@ -50,10 +49,29 @@ class CompanyModel extends UsersModel
         return $sth->fetchAll();
     }
 
-    public function countcompany()
+    public function countUsers()
     {
-        $query = $this->dbh->query('SELECT COUNT(*) as company FROM company');
+        $query = $this->dbh->query('SELECT COUNT(*) as users FROM users');
         return $query->fetch();
     }
 
+    public function getAllPro()
+    {
+        $query = $this->dbh->query('SELECT *FROM users WHERE role = "pros" ');
+        return $query->fetchAll();
+    }
+
+    public function getProById($id)
+    {
+        $sql = ('SELECT * FROM users WHERE id = '.$id);
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+
+        return $sth->fetchAll();
+    }
+    public function getAllComments($id)
+    {
+        $query = $this->dbh->query('SELECT *FROM commentaire WHERE id_combyuser = '.$id);
+        return $query->fetchAll();
+    }
 }

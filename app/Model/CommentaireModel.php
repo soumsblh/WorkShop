@@ -9,7 +9,16 @@
 namespace Model;
 
 
-class CommentaireModel
-{
+use W\Model\Model;
 
+class CommentaireModel extends Model
+{
+    public function getAllCommentairesByCom($id)
+    {
+        $sql = ('SELECT * FROM commentaire WHERE idComm ='.$id);
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute();
+
+        return $sth->fetchAll();
+    }
 }

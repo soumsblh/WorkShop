@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'apropos']) ?>
+<?php $this->layout('layout', ['title' => 'Nous Contacter']) ?>
 <?php $this->start('main_content') ?>
     <section class="page-section cta">
       <div class="container">

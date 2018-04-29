@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'apropos']) ?>
+<?php $this->layout('layout', ['title' => 'à propos']) ?>
 <?php $this->start('main_content') ?>
     <section class="page-section about-heading">
       <div class="container">

@@ -24,43 +24,17 @@ class SecurityController extends Controller
             $siren   = trim($_POST['siren']);
             $email      = trim($_POST['email']);
             $password   = trim($_POST['password']);
-            $cfpassword = trim($_POST['cfpassword']);
 
             $user_manager = new UserModel();  //on dois crée User model et m'herié de W de base
 
-
-            $errors = [];
-                if (strlen($username) < 2 ) {
-                    $errors['username'] = "Le prenom doit comporter au moins 2 caractères.";
-                }
-                if (strlen($siren) < 2 ) {
-                    $errors['siren'] = "Le nom doit comporter au moins 2 caratères.";
-                }
-                if ( $user_manager->emailExists($email) || $user_manager->usernameExists($username) ) {
-                    $errors['exists'] = "L'email ou le nom d'utilisateur existe deja";
-                }
-                if ( empty($username)) {
-                    $errors['username'] = "Le nom d'utilisateur est vide.";
-                }
-                if ( empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL) ){
-                    $errors['email'] = "L'email est vide ou invalide.";
-                }
-                if ( empty($password)) {
-                    $errors['password'] = "Le mot de passe est vide.";
-                }
-                if ( $password != $cfpassword ){
-                    $errors['cfpassword'] = "Les mots de passe ne correspondent pas.";
-                }
-
-            if( empty($errors) ){
-                $auth_manager = new \W\Security\AuthentificationModel();
+                  $auth_manager = new \W\Security\AuthentificationModel();
                   //si il n'y a pas d'erreur on inscrit lutilisateur en bdd
                   $user_manager->insert([
 
                       'username' => $username,
                       'siren' => $siren,
                       'email'    => $email ,
-                      'role'     => 'user',
+                      'role'     => 'pros',
                       'password' => $auth_manager->hashPassword($password) //$auth_manager->hashPassword() pbm avec hashage de mt d passe
 
                   ]);
@@ -71,17 +45,11 @@ class SecurityController extends Controller
                       $user_manager = new UserModel();
                       $user = $user_manager->find($user_id); // Récupére toutes les infos de l'utilisateur qui se connecte
                       $auth_manager->logUserIn($user); // La connexion se fait
-                      $this->redirectToRoute('default_profilPro');
+                      $this->redirectToRoute('panel_profile_profilePro');
                   }
 
-            }
-            else {
-
-                $message = $errors;
-            }
-
           }
-        $this->show('security/registre' , ['siren' => $siren, 'username' => $username , 'email' => $email ]);
+        $this->show('security/register' , ['siren' => $siren, 'username' => $username , 'email' => $email ]);
     }
 
     /**
@@ -91,7 +59,6 @@ class SecurityController extends Controller
     {
 
         if (isset($_POST['button-login'])) {
-            var_dump($_POST);
             $username = $_POST['username'];
             $password = $_POST['password'];
             $auth_manager = new \W\Security\AuthentificationModel();
@@ -101,7 +68,7 @@ class SecurityController extends Controller
                 $user_manager = new UserModel();
                 $user = $user_manager->find($user_id); // Récupére toutes les infos de l'utilisateur qui se connecte
                 $auth_manager->logUserIn($user); // La connexion se fait
-                $this->redirectToRoute('default_profilPro');
+                $this->redirectToRoute('panel_profile_profilePro');
             }
         }
 
@@ -115,7 +82,7 @@ class SecurityController extends Controller
     {
         $auth_manager = new \W\Security\AuthentificationModel();
         $auth_manager->logUserOut(); // Déconnecte l'utilisateur connecté
-        $this->redirectToRoute('default_frontPage');
+        $this->redirectToRoute('default_home');
     }
 
     /**

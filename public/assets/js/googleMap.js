@@ -34,10 +34,9 @@ xhr.onreadystatechange = function(){
         var data = JSON.parse(xhr.responseText);
         for (var i = 0; i < data.length; i++) {
             locations[i] = {lat: Number(data[i]["Latitude"]), lng: Number(data[i]["Longitude"])};
-            document.getElementById("Company").innerHTML = document.getElementById("Company").innerHTML + "<br />---------------<br />" + Number(i + 1) + " - " + data[i]["RaisonSocial"] + " - SIREN: " + data[i]["SIREN"] + "<br />" + data[i]["Address"];
         }
     }
 };
 
-xhr.open('GET', "../app/map.php");
+xhr.open('GET', "../app/Controller/map.php");
 xhr.send(null);

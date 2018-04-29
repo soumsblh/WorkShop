@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'home']) ?>
+<?php $this->layout('layout', ['title' => 'Accueil']) ?>
 <?php $this->start('main_content') ?>
 <section class="page-section clearfix">
     <div class="container">
@@ -33,14 +33,10 @@
                         <span class="section-heading-upper">Les pros </span>
                         <span class="section-heading-lower">Prés de chez-vous </span>
                     </h2>
-                    <div class="col-md-12 col-md-offset-2">
-                        <div action="/" class="form-group js-form">
-                            <label class="text-center" for="address" class="label">Ajouter une adresse</label>
-                            <input id="pac-input" type="text" value="" class="form-control js-input" />
-                        </div>
-                    </div>
                         <div id="map" style="width:100%;height:300px"></div>
-                    <div id ="Company"> </div>
+                    <table>
+                    <tbody id ="Company"> </tbody>
+                    </table>
                 </div>
             </div>
         </div>

@@ -1,6 +1,10 @@
-<?php $this->layout('layout', ['title' => 'register']) ?>
+<?php $this->layout('layout', ['title' => 'Inscription']) ?>
 
-            <?php $this->start('main_content') ?>
+<?php $this->start('main_content') ?>
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-up" checked><label for="tab-1" class="tab">S'inscrire</label>
+        <div class="login-form">
             <form class="sign-up-htm" method="POST">
                 <div class="group">
                     <label for="user" class="label">Nom</label>
@@ -23,7 +27,7 @@
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
-                    <label for="tab-1">Vous-etez déjà membre ? </label>
+                    <label for="tab-1" ><a href="<?php echo $this->url('security_login'); ?>"> Vous-etez déjà membre ? </a></label>
                 </div>
             </form>
         </div>
