@@ -1,5 +1,8 @@
 /vendor/
-/sql/
+/SQL/
+/W/
+*.pdf
+*.zip
 app/config.php
 /phpDocumentor.phar
 *.log
